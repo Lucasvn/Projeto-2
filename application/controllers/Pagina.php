@@ -110,6 +110,7 @@ class Pagina extends CI_Controller {
 					if(!$status){
 						$dados['erro'] = 'addC';
 						$dados['page'] = 'emp';
+						$dados['empresa'] = $this->empresa_model->GetAll('nome');
 						$this->template->load('template', 'error', $dados);
 					}else{
 						redirect(base_url('colaboradores'));
@@ -117,6 +118,7 @@ class Pagina extends CI_Controller {
 				}else{
 					$dados['erro'] = 'addC';
 					$dados['page'] = 'emp';
+					$dados['empresa'] = $this->empresa_model->GetAll('nome');
 					$this->template->load('template', 'error', $dados);
 				}
 			}
